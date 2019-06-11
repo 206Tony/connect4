@@ -1,0 +1,46 @@
+body {
+  background-color: grey;
+  text-align: center;
+
+}
+
+#gameboard {
+  margin-top: 60px;
+  display: inline-block;
+  background-color: yellow;
+  height: 600px;
+  width: 560px;
+}
+
+.boardplay { 
+  display: inline-block;
+  background-color: grey;
+  border-radius: 50%;
+  width: 75px;
+  height: 80px;
+}
+
+#board {
+  margin-top: 10px;
+  display: inline-block;
+  background-color: blue;
+  border-radius: 50%;
+  width: 75px;
+  height: 80px;
+}
+
+div {
+  height: 15px;
+  width: 600px
+}
+
+.red {
+  background-color: red;
+  border-radius: 50%;
+
+}
+.black {
+  background-color: black;
+  border-radius: 50%;
+}
+
