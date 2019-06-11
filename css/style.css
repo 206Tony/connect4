@@ -20,7 +20,7 @@ body {
   height: 80px;
 }
 
-#board {
+.drop {
   margin-top: 10px;
   display: inline-block;
   background-color: blue;

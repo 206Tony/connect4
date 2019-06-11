@@ -1,13 +1,6 @@
-var board = [
-  [0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0]
-]
-var player;
+var board; 
+var player = 'red';
+var topRow;
 var c;
 var r;
 var start;
@@ -25,115 +18,88 @@ var columnTracker = {
 
 document.addEventListener('DOMContentLoaded', function(e) {
   board = document.getElementById('board');
-  boardPlay = document.getElementById('boardplay');
-  player = document.getElementsByClassName('player');
-  r = document.getElementsByClassName('boardplay'[0]);
-  c = document.getElementsByClassName('boardplay'[1]);
+  topRow = document.getElementsByClassName('toprow');
   red = document.getElementsByClassName('red');
   black= document.getElementsByClassName('black');
   start = document.getElementById('start');
 
-  
-  player = player === 'red' ? 'black' : 'red';
-
-  document.addEventListener('click', function(e) {
+  board.addEventListener('click', function(e) {
     console.log(e.target.classList);
-    let r = e.target.classList[0];
-    let c = e.target.classList[1];
-    
-    columnTracker[c]++;
-    //checkForWin();
-    fillSpot(c);
     gameStart();
     drawBoard();
+    fillSpot(e);
+    checkForWin(spot, player);
+    endGame();
   })
-
-  function gameStart() {
-    if (start === true) {
-      return false;
-    }
-      start = true;
-  
-  }
-
-  function drawBoard() {
-    checkForWin();
-    for (c = 0; c <= 6; c++) {
-      for (r = 0; r <= 5; r++) {
-        document.getElementsByClassName('boardplay').value;
-      }
-    }
-  }
-
-  function setTurn() {
-    if (start) {
-      player = true;
-      player++;
-      document.getElementById('gameboard').textContent = 'player';
-    }
-  }
-  function fillSpot(c) {
-    for (r = 5; r >= c; r--) {
-      if (board[c][r] === 0) {
-        board[c][r] = player;
-        drawBoard();
-        player++;
-      }  
-    }
-  }
-
-  function checkForWin() {
-  //check left to right
-    for (var i = 0; i <= board; i++) {
-      for (c = 0; c <= board; c++) {
-        for (r = 0; r <= board; r++) {
-          if (board[r][c] === i) {
-            if ((board[r][c + 1] === i) && (board[r][c + 2] === i) && (board[r][c + 3] === i)) {
-              endGame(i);
-              return true;
-            }
-          }
-        }
-      }
-    }
-  //top to bottom
-    for (var i = 0; i <= board; i++) {
-      for (c = 0; c <= board; c++) {
-        for (r = 0; r <= board; r++) {
-          if (board[r][c] === i) {
-            if ((board[r + 1][c] === i) && (board[r + 2][c] === i) && (board[r + 3][c] === i)) {
-              endGame(i);
-              return true;
-            }
-          }
-        }
-      }
-    }
-  //check diag down
-    for (var i = 0; i <= board; i++) {
-      for (c = 0; c <= board; c++) {
-        for (r = 0; r <= board; r++) {
-          if (board[r][c] === i) {
-            if ((board[r + 1][c + 1] === i) && (board[r + 2][c + 2] === i) && (board[r + 3][c + 3] === i)) {
-              endGame(i);
-              return true;
-            }
-          }
-        }
-      }
-    }
-  //check diag up
-    for (var i = 0; i <= board; i++) {
-      for (c = 0; c <= board; c++) {
-        for (r = 3; r <= board; r++) {
-          if (board[r][c] === i) {
-            if ((board[r - 1][c + 1] === i) && (board[r - 2][c + 2] === i) && (board[r - 3][c + 3] === i)) {
-              endGame(i);
-              return true;
-            }
-          }
-        }
-      }
-    }
-  }
 })
+
+function gameStart() {
+  if (start === true) {
+    document.getElementById('start');
+    return false;
+  }
+    start = true;
+}
+
+function drawBoard() {
+  for (c = 0; c <= 6; c++) {
+    for (r = 0; r <= 5; r++) {
+      document.getElementsByClassName('boardplay').value;
+    }
+  }
+}
+// loop through classlist of element that you just filled in fillSpot
+// filter non winconditions from classlist
+
+function checkForWin(el, color) {
+  let winConditions = [];
+  let squares;
+  winConditions.push(el.parentElement.classList.item(1));
+  winConditions.push(el.classList.item(1));
+
+  for (let condition of winConditions) {
+    if (condition.slice(0,3) === "row") {
+      squares = el.parentElement.children;
+    } else {
+      squares = document.getElementsByClassName(condition);
+    }
+    let count = 1
+    // loop over squares
+    for (let i = 1; i < squares.length; i++) {
+      // if current square classList contains current player
+      if (squares[i].classList.contains(player) && squares[i-1].classList.contains(player)) {
+        // increment count
+        console.log("we found a match, incrementing count")
+        count++;
+      } else {
+        // if they don't match, reset counter to 1
+        console.log()
+        count = 1;
+      }
+      // at end of loop, if we've found 4 or more, they win
+      if (count > 3) {
+        // game is over
+        console.log("we won!");
+        endGame();
+      }
+    }
+  }
+}
+
+function endGame() {
+  // checkForWin(spot, player);
+  startGame = false;
+  document.getElementById('board').textContent = 'winner: ' + player;
+}
+
+function fillSpot(e) {
+  let column = e.target.classList[2];
+  // e.target.classList
+  let row = 6 - columnTracker[column];
+  columnTracker[column]++;
+  let spot = document.getElementsByClassName(column)[row];
+  spot.classList.add(player);
+  checkForWin(spot, player);
+  player = player === 'red' ? 'black' : 'red';
+
+}
