@@ -1,6 +1,6 @@
 var board = []; 
 var player = 'red';
-var message = 'Player: ' + player + ' you win!';
+var message = '';
 var columnTracker = {
   column0: 0,
   column1: 0,
@@ -20,7 +20,6 @@ document.addEventListener('DOMContentLoaded', function(e) {
   column = document.getElementsByClassName('column');
   message = document.getElementById('message');
 
-
   board.addEventListener('click',fillSpot);
   restartBtn.addEventListener('click', init);
 });
@@ -38,7 +37,8 @@ function init() {
   }
   let squareds = document.querySelectorAll('.playground')
   squareds.forEach( function(square) {
-    square.classList.remove('red','black')
+    message.textContent = '';
+    square.classList.remove('red','black');
   })
   board.addEventListener('click',fillSpot);
 }
@@ -80,7 +80,7 @@ function fillSpot(e) {
 
 function endGame() {
   board.removeEventListener('click', fillSpot);
-  document.querySelectorAll('message').value = 'Player ' + player + ' you win!';
+  message.textContent = player.toUpperCase() + ' player you are the winner!'
 }
 
 

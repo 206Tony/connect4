@@ -9,14 +9,11 @@
   </head>
   <body>
     <header>
-      <p id='title'>Connect 4</p>
-      <p>Instructions: First player to get 4 of their pieces in a row, column, or diagonal line wins.</p>
+      <h1 id='title'>Connect 4</h1>
+      <p class='instructions'>Instructions: First player to get 4 of their pieces in a row, column, or diagonal is the winner.</p>
     </header>
     <section id='gameover'>
-      <button id='restartbtn'>Restart</button>
-      <div id='winnerMessage'>
-        <span id='message' display='hidden'></span>
-      </div>
+        <button id='restartbtn'>Restart</button> <h2 id="message" type='reset'></h2>    
     </section>
     <div id='gameboard'>
       <section id="board" class="toprow">
@@ -89,6 +86,9 @@
         <div class='playground row6 column6 d4'></div>
       </section>
     </div>
+    <footer>
+      <a href=""> Connect 4 - README.md</a>
+    </footer>
     <script src='js/script.js'></script>
   </body>
 </html>
