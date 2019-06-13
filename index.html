@@ -8,83 +8,88 @@
     <title>Connect4</title>
   </head>
   <body>
-    
+    <header>
+      <p id='title'>Connect 4</p>
+      <span id='message'>Player</span>
+      <p>Instructions: Winning player needs 4 of their pieces in a row, column, or diagonal line.</p>
+    </header>
+    <section id='gameover'>
+      <button id='restartbtn'>Restart</button>
+    </section>
+    <div id='winner'>
+      <p></p>
+    </div>
     <div id='gameboard'>
       <section id="board" class="toprow">
-        <div class='drop row0 column0 ld rd'></div>
-        <div class='drop row0 column1 ld rd'></div>
-        <div class='drop row0 column2 ld rd'></div>
-        <div class='drop row0 column3 ld rd'></div>
-        <div class='drop row0 column4 ld rd'></div>
-        <div class='drop row0 column5 ld rd'></div>
-        <div class='drop row0 column6 ld rd'></div>
+        <div class='drop row0 column0'></div>
+        <div class='drop row0 column1'></div>
+        <div class='drop row0 column2'></div>
+        <div class='drop row0 column3'></div>
+        <div class='drop row0 column4'></div>
+        <div class='drop row0 column5'></div>
+        <div class='drop row0 column6'></div>
       </section>
 
-      <section class='game row1'>
-        <div class='boardplay column0 ld rd player'></div>
-        <div class='boardplay column1 ld rd player'></div>
-        <div class='boardplay column2 ld rd player'></div>
-        <div class='boardplay column3 ld rd player'></div>
-        <div class='boardplay column4 ld rd player'></div>
-        <div class='boardplay column5 ld rd player'></div>
-        <div class='boardplay column6 r6c0rd player'></div>
+      <section class='game'>
+        <div class='playground row1 column0 d3 player'></div>
+        <div class='playground row1 column1 d4 player'></div>
+        <div class='playground row1 column2 d5 player'></div>
+        <div class='playground row1 column3 d6 d7 player'></div>
+        <div class='playground row1 column4 d8 player'></div>
+        <div class='playground row1 column5 d9 player'></div>
+        <div class='playground row1 column6 d10 player'></div>
       </section>
 
-      <section class='game row2'>
-        <div class='boardplay column0 ld rd player'></div>
-        <div class='boardplay column1 ld rd player'></div>
-        <div class='boardplay column2 ld rd player'></div>
-        <div class='boardplay column3 ld rd player'></div>
-        <div class='boardplay column4 ld rd player'></div>
-        <div class='boardplay column5 r6c0rd player'></div>
-        <div class='boardplay column6 ld rd player'></div>
+      <section class='game'>
+        <div class='playground row2 column0 d2 player'></div>
+        <div class='playground row2 column1 d3  player'></div>
+        <div class='playground row2 column2 d4 d7 player'></div>
+        <div class='playground row2 column3 d5 d8 player'></div>
+        <div class='playground row2 column4 d6 d9 player'></div>
+        <div class='playground row2 column5 d10 player'></div>
+        <div class='playground row2 column6 d11 player'></div>
       </section>
 
-      <section class='game row3'>
-        <div class='boardplay column0 ld rd player'></div>
-        <div class='boardplay column1 ld rd player'></div>
-        <div class='boardplay column2 ld rd player'></div>
-        <div class='boardplay column3 ld rd player'></div>
-        <div class='boardplay column4 r6c0rd player'></div>
-        <div class='boardplay column5 ld rd player'></div>
-        <div class='boardplay column6 ld rd player'></div>
+      <section class='game'>
+        <div class='playground row3 column0 d1 player'></div>
+        <div class='playground row3 column1 d2 d7 player'></div>
+        <div class='playground row3 column2 d3 d8 player'></div>
+        <div class='playground row3 column3 d4 d9 player'></div>
+        <div class='playground row3 column4 d5 d10 player'></div>
+        <div class='playground row3 column5 d6 d11 player'></div>
+        <div class='playground row3 column6 d12 player'></div>
       </section>
 
-      <section class='game row4'>
-        <div class='boardplay column0 ld rd player'></div>
-        <div class='boardplay column1 ld rd player'></div>
-        <div class='boardplay column2 r6c0rd player'></div>
-        <div class='boardplay column3 ld rd player'></div>
-        <div class='boardplay column4 ld rd player'></div>
-        <div class='boardplay column5 ld rd player'></div>
-        <div class='boardplay column6 ld rd player'></div>
+      <section class='game'>
+        <div class='playground row4 column0 d7 player'></div>
+        <div class='playground row4 column1 d1 d8 player'></div>
+        <div class='playground row4 column2 d2 d9 player'></div>
+        <div class='playground row4 column3 d3 d10 player'></div>
+        <div class='playground row4 column4 d4 d11 player'></div>
+        <div class='playground row4 column5 d5 d12 player'></div>
+        <div class='playground row4 column6 d6 player'></div>
       </section>
 
-      <section class='game row5'>
-        <div class='boardplay column0 ld rd player'></div>
-        <div class='boardplay column1 r6c0rd player'></div>
-        <div class='boardplay column2 ld rd player'></div>
-        <div class='boardplay column3 ld rd player'></div>
-        <div class='boardplay column4 ld rd player'></div>
-        <div class='boardplay column5 ld rd player'></div>
-        <div class='boardplay column6 ld rd player'></div>
+      <section class='game'>
+        <div class='playground row5 column0  d8 player'></div>
+        <div class='playground row5 column1  d9 player'></div>
+        <div class='playground row5 column2  d1 d10 player'></div>
+        <div class='playground row5 column3  d2 d11 player'></div>
+        <div class='playground row5 column4  d3 d12 player'></div>
+        <div class='playground row5 column5  d4 player'></div>
+        <div class='playground row5 column6  d5 player'></div>
       </section>
 
-      <section class='game row6'>
-        <div class='boardplay column0 r6c0rd player'></div>
-        <div class='boardplay column1 r6c1rd player'></div>
-        <div class='boardplay column2 r6c2rd player'></div>
-        <div class='boardplay column3 r6c3ld r6c3rd player'></div>
-        <div class='boardplay column4 r6c4ld player'></div>
-        <div class='boardplay column5 r6c5ld player'></div>
-        <div class='boardplay column6 r6c6ld player'></div>
+      <section class='game'>
+        <div class='playground row6 column0 d9 player'></div>
+        <div class='playground row6 column1 d10 player'></div>
+        <div class='playground row6 column2 d11 player'></div>
+        <div class='playground row6 column3 d1 d12 player'></div>
+        <div class='playground row6 column4 d2 player'></div>
+        <div class='playground row6 column5 d3 player'></div>
+        <div class='playground row6 column6 d4 player'></div>
       </section>
     </div>
-
-<footer id='gameover'>
-  <button id='start' >Start</button>
-  <button id='restart'>Restart</button>
-</footer>
     <script src='js/script.js'></script>
   </body>
 </html>
