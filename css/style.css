@@ -58,3 +58,9 @@ div {
   border-radius: 50%;
 }
 
+span {
+  height: 30px;
+  width: 100px;
+  color: black;
+}
+
