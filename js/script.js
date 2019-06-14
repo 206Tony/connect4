@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function(e) {
   row = document.getElementsByClassName('row');
   column = document.getElementsByClassName('column');
   message = document.getElementById('message');
+  cats = document.getElementById('cats');
 
   board.addEventListener('click',fillSpot);
   restartBtn.addEventListener('click', init);
@@ -57,10 +58,10 @@ function checkForWin(el, color) {
       if (squares[i].classList.contains(player) && squares[i-1].classList.contains(player)) {
         count++;
       } else {
-        count = 1;
+        count = 1; 
       }
       if (count > 3) {
-        endGame(); 
+        endGame();
       }
     }
   }
@@ -75,14 +76,16 @@ function fillSpot(e) {
     player = player === 'red'? 'black' : 'red';
     spot.classList.add(player);
     checkForWin(spot, player);
-  } 
+    console.log(spot);
+  }
 }
 
 function endGame() {
   board.removeEventListener('click', fillSpot);
-  message.textContent = player.toUpperCase() + ' player you are the winner!'
+  message.textContent = player.toUpperCase() + ' player you are the winner!';
 }
 
-
-
-
+function catsGame() {
+  board.removeEventListener('click', fillSpot); 
+  cats.textContent = 'Its a tie! You both Suck!'; 
+}

@@ -42,7 +42,7 @@ body {
 }
 .playground { 
   display: inline-block;
-  background-color: #353a49;
+  background-color: rgb(119, 118, 121);
   border-radius: 50%;
   width: 75px;
   height: 80px;
@@ -75,6 +75,13 @@ h3 {
 #message {
   text-align: center;
   width: 100%;
+  margin-bottom: 0px;
+}
+
+#cats {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0px;
 }
 footer {
   margin-top: 10px;
