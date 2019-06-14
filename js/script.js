@@ -46,6 +46,8 @@ function init() {
     cats.textContent ='';
     square.classList.remove('red','black');
   })
+  document.body.classList.add('brick');
+  document.body.classList.remove('cat');
   board.addEventListener('click',fillSpot);
 }
 
@@ -69,6 +71,8 @@ function checkForWin(el, color) {
         endGame();
       } else if (black.length + red.length === 42) {
         catsGame();
+        document.body.classList.remove('brick');
+        document.body.classList.add('cat');
       }
     }
   }

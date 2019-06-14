@@ -1,8 +1,14 @@
 body {
-  background-image: url('https://images.unsplash.com/photo-1550432421-45c25cab1e0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=3328&q=80');
+  /* background-image: url('https://images.unsplash.com/photo-1550432421-45c25cab1e0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=3328&q=80'); */
   background-attachment: fixed;
   background-size: cover;
   text-align: center;
+}
+.cat {
+  background-image: url('https://images.unsplash.com/photo-1534940225328-cf4f31ab9dfd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60');
+}
+.brick {
+  background-image: url('https://images.unsplash.com/photo-1550432421-45c25cab1e0c?ixlib=rb-1.2.1&auto=format&fit=crop&w=3328&q=80');
 }
 #title {
   color: black;
@@ -82,6 +88,7 @@ h3 {
   text-align: center;
   width: 100%;
   margin-bottom: 0px;
+
 }
 footer {
   margin-top: 10px;
