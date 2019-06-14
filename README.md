@@ -18,7 +18,8 @@ function checkForWin(el, color) {
   let winConditions = Array.from(el.classList).filter(function(condition) {
     return condition !== 'playground' && condition !== 'red' && condition !== 'black';
   });
-  
+})
+
   Next I created the loop that would go thru and check the classList elements for a match for the players 
   colored piece. I set a counter to increment each time there was a match. Then using an if else statement
   checked any matches.  If there was a match add 1 to the counter and loop again. This happened until 4 of 
@@ -42,7 +43,6 @@ function checkForWin(el, color) {
       }
     }
   }
-}
 
 #### Challenge 2 Fill a Spot
 In figuring out how to show and place the players piece. I created a fillSpot function that was hooked to an
