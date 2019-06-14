@@ -20,6 +20,8 @@ document.addEventListener('DOMContentLoaded', function(e) {
   column = document.getElementsByClassName('column');
   message = document.getElementById('message');
   cats = document.getElementById('cats');
+  black = document.getElementsByClassName('black');
+  red = document.getElementsByClassName('red')
 
   board.addEventListener('click',fillSpot);
   restartBtn.addEventListener('click', init);
@@ -39,6 +41,9 @@ function init() {
   let squareds = document.querySelectorAll('.playground')
   squareds.forEach( function(square) {
     message.textContent = '';
+    black.value = 0;
+    red.value = 0;
+    cats.textContent ='';
     square.classList.remove('red','black');
   })
   board.addEventListener('click',fillSpot);
@@ -62,6 +67,8 @@ function checkForWin(el, color) {
       }
       if (count > 3) {
         endGame();
+      } else if (black.length + red.length === 42) {
+        catsGame();
       }
     }
   }
@@ -76,8 +83,7 @@ function fillSpot(e) {
     player = player === 'red'? 'black' : 'red';
     spot.classList.add(player);
     checkForWin(spot, player);
-    console.log(spot);
-  }
+  } 
 }
 
 function endGame() {
