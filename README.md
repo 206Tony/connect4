@@ -50,6 +50,7 @@ eventHandler so when a player clicked a spot in the top row it would drop to the
 the columns for the drop and knowing I had 7 total rows I started them at 1 and decremented them as the pieces fell 
 to the bottom row. Assigning a spot variable to column, row allowed me to add the appropriate color to each players
 turn. Then fillSpot checked for a win by the spots location and the color of that spot.
+
 ```
 function fillSpot(e) {
   let column = e.target.classList[2];
@@ -61,6 +62,7 @@ function fillSpot(e) {
     spot.classList.add(player);
     checkForWin(spot, player);
   }
+```
 
 ### HindSight 
 Being the first game I've build made me realize hoe little at this point I really know.  I need to prepare and 
