@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='css/style.css' rel='stylesheet'>
+    <title>Connect4</title>
+  </head>
+  <body class='brick'>
+    <header>
+      <h1 id='title'>Connect 4</h1>
+      <p class='instructions'>Instructions: First player to get 4 of their pieces in a row, column, or diagonal is the winner.</p>
+    </header>
+    <section id='gameover'>
+        <button id='restartbtn'>Restart</button> <h2 id="message" type='reset'></h2><h2 id='cats' type='reset'></h2>  
+    </section>
+    <div id='gameboard'>
+      <section id="board" class="toprow">
+        <div class='drop row0 column0'></div>
+        <div class='drop row0 column1'></div>
+        <div class='drop row0 column2'></div>
+        <div class='drop row0 column3'></div>
+        <div class='drop row0 column4'></div>
+        <div class='drop row0 column5'></div>
+        <div class='drop row0 column6'></div>
+      </section>
+
+      <section class='game'>
+        <div class='playground row1 column0 d3'></div>
+        <div class='playground row1 column1 d4'></div>
+        <div class='playground row1 column2 d5'></div>
+        <div class='playground row1 column3 d6 d7'></div>
+        <div class='playground row1 column4 d8'></div>
+        <div class='playground row1 column5 d9'></div>
+        <div class='playground row1 column6 d10'></div>
+      </section>
+
+      <section class='game'>
+        <div class='playground row2 column0 d2'></div>
+        <div class='playground row2 column1 d3 '></div>
+        <div class='playground row2 column2 d4 d7'></div>
+        <div class='playground row2 column3 d5 d8'></div>
+        <div class='playground row2 column4 d6 d9'></div>
+        <div class='playground row2 column5 d10'></div>
+        <div class='playground row2 column6 d11'></div>
+      </section>
+
+      <section class='game'>
+        <div class='playground row3 column0 d1'></div>
+        <div class='playground row3 column1 d2 d7'></div>
+        <div class='playground row3 column2 d3 d8'></div>
+        <div class='playground row3 column3 d4 d9'></div>
+        <div class='playground row3 column4 d5 d10'></div>
+        <div class='playground row3 column5 d6 d11'></div>
+        <div class='playground row3 column6 d12'></div>
+      </section>
+
+      <section class='game'>
+        <div class='playground row4 column0 d7'></div>
+        <div class='playground row4 column1 d1 d8'></div>
+        <div class='playground row4 column2 d2 d9'></div>
+        <div class='playground row4 column3 d3 d10'></div>
+        <div class='playground row4 column4 d4 d11'></div>
+        <div class='playground row4 column5 d5 d12'></div>
+        <div class='playground row4 column6 d6'></div>
+      </section>
+
+      <section class='game'>
+        <div class='playground row5 column0 d8'></div>
+        <div class='playground row5 column1 d9'></div>
+        <div class='playground row5 column2 d1 d10'></div>
+        <div class='playground row5 column3 d2 d11'></div>
+        <div class='playground row5 column4 d3 d12'></div>
+        <div class='playground row5 column5 d4'></div>
+        <div class='playground row5 column6 d5'></div>
+      </section>
+
+      <section class='game'>
+        <div class='playground row6 column0 d9'></div>
+        <div class='playground row6 column1 d10'></div>
+        <div class='playground row6 column2 d11'></div>
+        <div class='playground row6 column3 d1 d12'></div>
+        <div class='playground row6 column4 d2'></div>
+        <div class='playground row6 column5 d3'></div>
+        <div class='playground row6 column6 d4'></div>
+      </section>
+    </div>
+    <footer>
+      <a href="https://github.com/206Tony/connect4"> Connect 4 - README.md</a>
+    </footer>
+    <script src='js/script.js'></script>
+  </body>
+</html> 

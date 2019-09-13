@@ -11,7 +11,6 @@ var columnTracker = {
   column6: 0
 };
 
-
 document.addEventListener('DOMContentLoaded', function(e) {
   board = document.getElementById('board');
   restartBtn = document.getElementById('restartbtn'); 
